@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div id="music-widget" class="floating-widget-left">
+            <h3 class="widget-title">🎵 Nuestra Música</h3>
+            <a id="song-link" href="#" target="_blank">
+                <img id="album-cover" src="" alt="Portada del álbum">
+                <div id="song-name">Cargando canción...</div>
+                <div class="click-text">Clic para escuchar</div>
+            </a>
+        </div>
+
+        <div id="facts-widget" class="floating-widget-left facts-position">
+            <h3 class="widget-title">Sabías que...</h3>
+            <p id="fact-display">Cargando dato...</p>
+            <button class="key-btn action-key" style="width: 100%; margin-top: 10px;" onclick="mostrarDatoNuevo()">Otro dato</button>
+        </div>
+
+        <div id="secret-widget" class="floating-widget-right">
+            <h3 class="widget-title">ingresa una fecha o año</h3>
+            <div id="secret-display">____</div>
+            <div class="keypad">
+                <button class="key-btn" onclick="pressKey('1')">1</button>
+                <button class="key-btn" onclick="pressKey('2')">2</button>
+                <button class="key-btn" onclick="pressKey('3')">3</button>
+                <button class="key-btn" onclick="pressKey('4')">4</button>
+                <button class="key-btn" onclick="pressKey('5')">5</button>
+                <button class="key-btn" onclick="pressKey('6')">6</button>
+                <button class="key-btn" onclick="pressKey('7')">7</button>
+                <button class="key-btn" onclick="pressKey('8')">8</button>
+                <button class="key-btn" onclick="pressKey('9')">9</button>
+                <button class="key-btn action-key" onclick="clearSecret()">C</button>
+                <button class="key-btn" onclick="pressKey('0')">0</button>
+                <button class="key-btn action-key" onclick="checkSecret()">OK</button>
+            </div>
+        </div>
+
+        <div id="poll-widget" class="floating-widget-right poll-position">
+            <h3 class="widget-title">¿Que hacemos hoy?</h3>
+            <div class="poll-options" style="text-align: left; margin-bottom: 15px; color: #e0e0e0; font-family: 'Pixelify Sans', monospace;">
+                <label style="display: block; margin-bottom: 8px; cursor: pointer;">
+                    <input type="radio" name="discord-plan" value="entrar a nuestro server de Minecraft"> Jugar Minecraft
+                </label>
+                <label style="display: block; margin-bottom: 8px; cursor: pointer;">
+                    <input type="radio" name="discord-plan" value="jugar algo de accion retro"> Jugar algo retro
+                </label>
+                <label style="display: block; margin-bottom: 8px; cursor: pointer;">
+                    <input type="radio" name="discord-plan" value="ver una pelicula o anime"> Ver una pelicula
+                </label>
+                <label style="display: block; margin-bottom: 8px; cursor: pointer;">
+                    <input type="radio" name="discord-plan" value="solo platicar un rato"> Solo platicar
+                </label>
+            </div>
+            <button class="key-btn action-key" style="width: 100%;" onclick="enviarRespuesta()">Avisarme</button>
+        </div>
+
+        <header>
+            <h1>Para ti cariño :3 </h1>
+            <p>Un pequeño pedazo de nosotros...</p>
+        </header>
+
+        <section class="gallery-section">
+            <h2>Nuestros Momentos</h2>
+            <div class="carousel-container">
+                <div class="carousel-track" id="track"></div>
+            </div>
+            <p class="instruccion">(Toca una foto para agrandar)</p>
+        </section>
+
+        <div class="interactive-zone">
+            
+            <section class="gacha-section">
+                <h2>Caja de Botín</h2>
+                <div class="gacha-container">
+                    <img src="fotos/gachapon.png" alt="Máquina Gachapon" id="gacha-img" style="width: 220px; margin-bottom: 15px;" onerror="this.style.display='none'">
+                    <p>Obtén un cupón sorpresa diario...</p>
+                    <button id="gacha-btn" class="key-btn action-key" onclick="tirarGacha()">Sacar un premio</button>
+                    
+                    <div id="gacha-result" class="inventory-lore" style="display: none; margin-top: 15px;">
+                        <h3 id="gacha-nombre"></h3>
+                        <p id="gacha-desc"></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="inventory-section">
+                <h2>Inventario de Jugador</h2>
+                <div class="inventory-container">
+                    <div class="inventory-grid" id="inventory-grid">
+                        </div>
+                    <div class="inventory-lore">
+                        <h3 id="lore-title">Inspeccionar objeto</h3>
+                        <p id="lore-text">Selecciona un objeto de tu inventario para ver su rareza, estadisticas e historia secreta...</p>
+                    </div>
+                </div>
+            </section>
+
+        </div> </div> 
+    
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content-container">
+            <img class="modal-content" id="img01">
+            <div id="modal-caption" class="caption"></div>
+        </div>
+    </div>
+
+    <audio id="ee-audio" src=""></audio>
+
+    <img id="peeking-image" src="" alt="Sorpresa">
+
+    <div id="peeking-video-container">
+        <video id="peeking-video" src="" controls></video>
+    </div>
+
+    <script src="comentarios.js"></script>
+    <script src="canciones.js"></script>
+    <script src="secretos.js"></script>
+    <script src="datos.js"></script> 
+    <script src="inventario.js"></script> 
+    <script src="gacha.js"></script> <script src="script.js"></script>
+</body>
+</html>
