@@ -234,19 +234,6 @@ section { margin-top: 40px; padding-top: 20px; border-top: 2px dashed rgba(255, 
     cursor: pointer;
 }
 
-/* ADAPTACIÓN PARA CELULARES */
-@media (max-width: 1000px) {
-    .floating-widget-left, .floating-widget-right {
-        position: static;
-        margin: 0 auto 30px auto;
-        width: 80%;
-        max-width: 300px;
-    }
-    .interactive-zone, .gacha-section {
-        transform: none; 
-    }
-}
-
 /* =========================================
    ANIMACIONES DE EASTER EGGS (ASOMARSE)
    ========================================= */
@@ -462,4 +449,37 @@ section { margin-top: 40px; padding-top: 20px; border-top: 2px dashed rgba(255, 
 
 .gacha-animada {
     animation: vibrarGacha 0.2s infinite; /* Gira y tiembla muy rápido */
+}
+
+/* ADAPTACIÓN PARA CELULARES */
+@media (max-width: 1000px) {
+    .floating-widget-left, .floating-widget-right {
+        position: static;
+        margin: 0 auto 30px auto;
+        width: 80%;
+        max-width: 300px;
+    }
+    
+    .interactive-zone {
+        transform: none !important; 
+        flex-direction: column; /* Apila el gacha arriba y el inventario abajo */
+        align-items: center;
+        width: 100%;
+    }
+
+    .gacha-section {
+        transform: none !important;
+        margin-bottom: 30px;
+    }
+
+    /* Ajustes para que el inventario no rompa la pantalla del celular */
+    .inventory-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 espacios por fila en vez de 5 */
+        gap: 8px;
+    }
+
+    .inventory-slot {
+        width: 55px; /* Cuadritos un poco más pequeños */
+        height: 55px;
+    }
 }
