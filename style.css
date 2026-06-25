@@ -129,18 +129,8 @@ section { margin-top: 40px; padding-top: 20px; border-top: 2px dashed rgba(255, 
 /* =========================================
    ESTILOS DINÁMICOS DEL CARRUSEL
    ========================================= */
-.estilo-film {
-    background-color: #111;
-    padding: 35px 0;
-    border-radius: 4px;
-    border: none;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-}
-.estilo-film::before, .estilo-film::after {
-    content: ""; position: absolute; left: 0; right: 0; height: 12px;
-    background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) 15px, transparent 15px, transparent 25px);
-}
+.estilo-film { background-color: #111; padding: 35px 0; border-radius: 4px; border: none; position: relative; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); }
+.estilo-film::before, .estilo-film::after { content: ""; position: absolute; left: 0; right: 0; height: 12px; background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) 15px, transparent 15px, transparent 25px); }
 .estilo-film::before { top: 10px; }
 .estilo-film::after { bottom: 10px; }
 .estilo-film .carousel-slide img { border-radius: 0; filter: sepia(0.4) contrast(1.1); transition: filter 0.3s ease, transform 0.3s ease; }
@@ -153,333 +143,164 @@ section { margin-top: 40px; padding-top: 20px; border-top: 2px dashed rgba(255, 
 /* =========================================
    WIDGETS IZQUIERDOS (MÚSICA Y DATOS)
    ========================================= */
-.floating-widget-left {
-    position: absolute; 
-    left: 40px; 
-    top: 60px; 
-    width: 220px;
-    background: rgba(15, 12, 27, 0.9);
-    border: 4px solid #555; 
-    border-radius: 8px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    z-index: 100;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
+.floating-widget-left { position: absolute; left: 40px; top: 60px; width: 220px; background: rgba(15, 12, 27, 0.9); border: 4px solid #555; border-radius: 8px; padding: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.6); z-index: 100; transition: transform 0.3s ease, border-color 0.3s ease; }
 .floating-widget-left:hover { transform: scale(1.05); border-color: #ff8fb8; }
-
 .widget-title { font-size: 1.3rem; color: #ff8fb8; margin-top: 0; margin-bottom: 15px; border-bottom: 2px dashed #444; padding-bottom: 5px; }
 
-/* Estilos de la Música */
 #song-link { text-decoration: none; display: block; }
 #album-cover { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 4px; margin-bottom: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.4); }
 #song-name { color: #e0e0e0; font-size: 1.1rem; margin-bottom: 8px; line-height: 1.2; }
 .click-text { color: #ffff55; font-size: 0.9rem; animation: splashBounce 0.6s infinite alternate; }
 
-/* Estilos de los Datos Curiosos */
-.facts-position {
-    top: 560px; /* Lo empuja hacia abajo para que no choque con la música */
-}
-#fact-display {
-    color: #e0e0e0;
-    font-size: 1rem;
-    line-height: 1.4;
-    margin-bottom: 10px;
-    min-height: 80px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+.facts-position { top: 560px; }
+#fact-display { color: #e0e0e0; font-size: 1rem; line-height: 1.4; margin-bottom: 10px; min-height: 80px; display: flex; align-items: center; justify-content: center; }
 
 /* =========================================
    WIDGETS DERECHOS (SECRETOS Y CUESTIONARIO)
    ========================================= */
-.floating-widget-right {
-    position: absolute;
-    right: 40px; 
-    top: 60px;
-    width: 220px;
-    background: rgba(15, 12, 27, 0.9);
-    border: 4px solid #555; 
-    border-radius: 8px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    z-index: 100;
-}
-
-/* Estilos del Panel Secreto */
-#secret-display {
-    background-color: #000; color: #55ff55; font-size: 1.5rem; padding: 10px;
-    margin-bottom: 15px; border: 2px solid #333; border-radius: 4px;
-    letter-spacing: 5px; height: 30px; display: flex; align-items: center; justify-content: center;
-}
+.floating-widget-right { position: absolute; right: 40px; top: 60px; width: 220px; background: rgba(15, 12, 27, 0.9); border: 4px solid #555; border-radius: 8px; padding: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.6); z-index: 100; }
+#secret-display { background-color: #000; color: #55ff55; font-size: 1.5rem; padding: 10px; margin-bottom: 15px; border: 2px solid #333; border-radius: 4px; letter-spacing: 5px; height: 30px; display: flex; align-items: center; justify-content: center; }
 .keypad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.key-btn {
-    font-family: 'Pixelify Sans', monospace; background-color: #444; color: white;
-    border: 2px solid #222; padding: 10px 0; font-size: 1.2rem; cursor: pointer;
-    border-radius: 4px; transition: background-color 0.2s, transform 0.1s;
-}
+.key-btn { font-family: 'Pixelify Sans', monospace; background-color: #444; color: white; border: 2px solid #222; padding: 10px 0; font-size: 1.2rem; cursor: pointer; border-radius: 4px; transition: background-color 0.2s, transform 0.1s; }
 .key-btn:active { transform: scale(0.95); background-color: #666; }
 .action-key { background-color: #9d316e; }
 
-/* Estilos del Cuestionario de Discord */
-.poll-position {
-    top: 550px; /* Lo empuja hacia abajo para no chocar con el teclado */
-}
-.poll-options input[type="radio"] {
-    accent-color: #9d316e; 
-    cursor: pointer;
-}
+.poll-position { top: 550px; }
+.poll-options input[type="radio"] { accent-color: #9d316e; cursor: pointer; }
 
 /* =========================================
    ANIMACIONES DE EASTER EGGS (ASOMARSE)
    ========================================= */
-#peeking-image {
-    position: fixed;
-    bottom: -300px; /* Posición inicial oculta */
-    left: 50%;
-    transform: translateX(-50%);
-    max-height: 25vh; 
-    z-index: 1000;
-}
+#peeking-image { position: fixed; bottom: -300px; left: 50%; transform: translateX(-50%); max-height: 25vh; z-index: 1000; }
+#peeking-image.show { animation: asomarseRapido 2s ease-in-out; }
+@keyframes asomarseRapido { 0% { bottom: -300px; } 50% { bottom: -10px; } 100% { bottom: -300px; } }
 
-#peeking-image.show {
-    /* Llama a la animación que creamos abajo, dura exactamente 2 segundos */
-    animation: asomarseRapido 2s ease-in-out;
-}
-
-/* Creamos la ruta exacta del movimiento */
-@keyframes asomarseRapido {
-    0%   { bottom: -300px; }
-    50%  { bottom: -10px; }  /* A la mitad del tiempo llega a su punto máximo */
-    100% { bottom: -300px; } /* Regresa inmediatamente al fondo */
-}
-
-/* EL CONTENEDOR BASE */
-#peeking-video-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 150vh);
-    z-index: 1000;
-    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
-    
-    /* Tamaño general del cuadro de cine */
-    width: 85%;
-    max-width: 800px;
-    aspect-ratio: 1.5; /* Mantiene la forma rectangular del marco */
-    
-    /* VITAL: Sin padding ni fondos aquí para evitar conflictos */
-    padding: 0;
-    background: transparent;
-}
-
-#peeking-video-container.show {
-    transform: translate(-50%, -50%);
-}
-
-/* EL VIDEO (Capa inferior) */
-#peeking-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Asegura que no queden huecos negros */
-    display: block;
-    background-color: #000;
-    border-radius: 8px; /* Opcional, suaviza las esquinas debajo del marco */
-}
-
-/* EL MARCO DE PELÍCULA (Capa superior transparente) */
-#peeking-video-container::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('fotos/marco_roto.png'); /* Asegúrate del nombre exacto */
-    background-size: 100% 100%;
-    
-    /* MAGIA: Esto hace que el marco sea "fantasma" a los clics, 
-       permitiendo que ella pueda pausar el video o subir el volumen 
-       a través de la imagen del marco */
-    pointer-events: none; 
-}
+#peeking-video-container { position: fixed; top: 50%; left: 50%; transform: translate(-50%, 150vh); z-index: 1000; transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1); width: 85%; max-width: 800px; aspect-ratio: 1.5; padding: 0; background: transparent; }
+#peeking-video-container.show { transform: translate(-50%, -50%); }
+#peeking-video { width: 100%; height: 100%; object-fit: cover; display: block; background-color: #000; border-radius: 8px; }
+#peeking-video-container::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('fotos/marco_roto.png'); background-size: 100% 100%; pointer-events: none; }
 
 /* =========================================
    ZONA INTERACTIVA (GACHA + INVENTARIO LADO A LADO)
    ========================================= */
-.interactive-zone {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 30px;
-    margin-top: 40px;
-    flex-wrap: wrap; /* Vital para que se acomode en celulares */
-    width: 100%;
+.interactive-zone { display: flex; justify-content: center; align-items: flex-start; gap: 30px; margin-top: 40px; flex-wrap: wrap; width: 100%; transform: translateX(-80px); /* Ajuste menor para centrar todo el bloque */ }
+.gacha-section { width: 100%; max-width: 320px; margin: 0; }
+.gacha-container { background: rgba(20, 15, 35, 0.85); border: 4px solid #3c3c3c; box-shadow: inset 0 0 20px rgba(0,0,0,0.8), 0 10px 25px rgba(0,0,0,0.5); padding: 20px; border-radius: 4px; text-align: center; }
+.gacha-container p { color: #b5b5c0; margin-bottom: 20px; font-size: 0.95rem; }
+#gacha-btn { width: 100%; padding: 15px; font-size: 1.1rem; }
 
-    transform: translateX(-175px);
-}
+.inventory-section { width: 100%; max-width: 500px; margin: 0; }
+.inventory-container { background: rgba(20, 15, 35, 0.85); border: 4px solid #3c3c3c; box-shadow: inset 0 0 20px rgba(0,0,0,0.8), 0 10px 25px rgba(0,0,0,0.5); padding: 20px; border-radius: 4px; }
+.inventory-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 25px; justify-items: center; }
+.inventory-slot { width: 75px; height: 75px; background: #8b8b8b; border-top: 4px solid #373737; border-left: 4px solid #373737; border-right: 4px solid #fff; border-bottom: 4px solid #fff; box-sizing: border-box; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.inventory-slot:hover, .inventory-slot.active { background: #c6c6c6; border-top: 4px solid #fff; border-left: 4px solid #fff; border-right: 4px solid #373737; border-bottom: 4px solid #373737; }
+.inventory-slot img { width: 75%; height: 75%; object-fit: contain; }
+.inventory-lore { background: #100c1e; border: 3px dashed #9d316e; padding: 15px; min-height: 110px; text-align: left; border-radius: 4px; box-sizing: border-box; }
+#lore-title { margin-top: 0; margin-bottom: 10px; color: #ffffff; font-size: 1.2rem; }
+#lore-text { margin: 0; color: #b5b5c0; font-size: 0.95rem; line-height: 1.5; }
 
-/* Estilos de la Máquina Gacha (Izquierda) */
-.gacha-section {
-    width: 100%;
-    max-width: 320px;
-    margin: 0;
-
-    transform: translateX(-200px);
-}
-
-.gacha-container {
-    background: rgba(20, 15, 35, 0.85);
-    border: 4px solid #3c3c3c;
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.8), 0 10px 25px rgba(0,0,0,0.5);
-    padding: 20px;
-    border-radius: 4px;
-    text-align: center;
-}
-
-.gacha-container p {
-    color: #b5b5c0;
-    margin-bottom: 20px;
-    font-size: 0.95rem;
-}
-
-#gacha-btn {
-    width: 100%;
-    padding: 15px;
-    font-size: 1.1rem;
-}
-
-/* INVENTARIO DE JUGADOR (Estilo RPG - Derecha) */
-.inventory-section {
-    width: 100%;
-    max-width: 500px;
-    margin: 0; 
-}
-
-.inventory-container {
-    background: rgba(20, 15, 35, 0.85);
-    border: 4px solid #3c3c3c;
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.8), 0 10px 25px rgba(0,0,0,0.5);
-    padding: 20px;
-    border-radius: 4px;
-}
-
-.inventory-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 espacios por fila */
-    gap: 12px;
-    margin-bottom: 25px;
-    justify-items: center;
-}
-
-/* Efecto de relieve 3D retro para cada cuadrito */
-.inventory-slot {
-    width: 75px;
-    height: 75px;
-    background: #8b8b8b;
-    border-top: 4px solid #373737;
-    border-left: 4px solid #373737;
-    border-right: 4px solid #fff;
-    border-bottom: 4px solid #fff;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-/* Cuando pasa el cursor o se selecciona, el relieve se invierte (se hunde) */
-.inventory-slot:hover, .inventory-slot.active {
-    background: #c6c6c6;
-    border-top: 4px solid #fff;
-    border-left: 4px solid #fff;
-    border-right: 4px solid #373737;
-    border-bottom: 4px solid #373737;
-}
-
-.inventory-slot img {
-    width: 75%;
-    height: 75%;
-    object-fit: contain;
-}
-
-/* Pantalla inferior de texto descriptivo */
-.inventory-lore {
-    background: #100c1e;
-    border: 3px dashed #9d316e;
-    padding: 15px;
-    min-height: 110px;
-    text-align: left;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-#lore-title {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #ffffff;
-    font-size: 1.2rem;
-}
-
-#lore-text {
-    margin: 0;
-    color: #b5b5c0;
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-
-/* Colores de rareza clasicos de videojuegos */
 .rarity-comun { color: #ffffff; text-shadow: 1px 1px #000; }
 .rarity-raro { color: #55ffff; text-shadow: 1px 1px #000; }
 .rarity-epico { color: #ff55ff; text-shadow: 1px 1px #000; }
 .rarity-legendario { color: #ffaa00; text-shadow: 1px 1px #000; font-weight: bold; }
 
-/* Animación para que la máquina Gachapon tiemble */
-@keyframes vibrarGacha {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    25% { transform: translate(-3px, 3px) rotate(-5deg); }
-    50% { transform: translate(3px, -3px) rotate(5deg); }
-    75% { transform: translate(-3px, -3px) rotate(-5deg); }
-    100% { transform: translate(3px, 3px) rotate(5deg); }
+@keyframes vibrarGacha { 0% { transform: translate(0, 0) rotate(0deg); } 25% { transform: translate(-3px, 3px) rotate(-5deg); } 50% { transform: translate(3px, -3px) rotate(5deg); } 75% { transform: translate(-3px, -3px) rotate(-5deg); } 100% { transform: translate(3px, 3px) rotate(5deg); } }
+.gacha-animada { animation: vibrarGacha 0.2s infinite; }
+
+/* Animación de latido para el botón sorpresa */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
 }
 
-.gacha-animada {
-    animation: vibrarGacha 0.2s infinite; /* Gira y tiembla muy rápido */
+/* =========================================
+   NUEVOS ESTILOS: ATAQUE DE CORAZÓN
+   ========================================= */
+#heart-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.4); 
+    backdrop-filter: blur(2px);
+    z-index: 9999;
+    display: none; 
+    overflow: hidden;
 }
 
-/* ADAPTACIÓN PARA CELULARES */
+.fake-window {
+    position: absolute;
+    width: 160px; 
+    background: #ffffff;
+    border: 2px solid #ff8fb8;
+    border-radius: 6px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.fake-window.pop {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.window-bar {
+    background: #ff8fb8; color: white;
+    padding: 3px 8px; font-size: 11px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Pixelify Sans', monospace;
+    user-select: none;
+}
+
+.window-content { padding: 5px; text-align: center; background: #fff; }
+.window-content img {
+    width: 100%; height: 110px;
+    object-fit: cover; border-radius: 3px; border: 1px solid #eee;
+}
+
+.window-txt {
+    font-size: 10px; color: #333; margin-top: 4px;
+    font-family: 'Pixelify Sans', monospace;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; 
+    padding: 0 2px;
+}
+
+.close-canvas-btn {
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    z-index: 10000; background: #9d316e; color: white;
+    border: 2px solid white; padding: 10px 20px;
+    font-family: 'Pixelify Sans', monospace;
+    cursor: pointer; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+/* =========================================
+   ADAPTACIÓN PARA CELULARES (¡AQUÍ ESTÁ LA MAGIA MÓVIL!)
+   ========================================= */
 @media (max-width: 1000px) {
     .floating-widget-left, .floating-widget-right {
-        position: static;
-        margin: 0 auto 30px auto;
-        width: 80%;
-        max-width: 300px;
+        position: static; margin: 0 auto 30px auto; width: 80%; max-width: 300px;
     }
     
     .interactive-zone {
         transform: none !important; 
-        flex-direction: column; /* Apila el gacha arriba y el inventario abajo */
+        flex-direction: column; 
         align-items: center;
         width: 100%;
     }
 
-    .gacha-section {
-        transform: none !important;
-        margin-bottom: 30px;
-    }
+    .gacha-section { transform: none !important; margin-bottom: 30px; }
 
-    /* Ajustes para que el inventario no rompa la pantalla del celular */
+    /* Ajuste de inventario para celulares */
     .inventory-grid {
-        grid-template-columns: repeat(4, 1fr); /* 4 espacios por fila en vez de 5 */
-        gap: 8px;
+        grid-template-columns: repeat(4, 1fr); gap: 8px;
     }
+    .inventory-slot { width: 55px; height: 55px; }
 
-    .inventory-slot {
-        width: 55px; /* Cuadritos un poco más pequeños */
-        height: 55px;
-    }
+    /* Escalado de las ventanitas para que el corazón quepa perfecto en celular */
+    .fake-window { width: 100px; }
+    .window-content img { height: 70px; }
+    .window-bar { font-size: 9px; padding: 2px 5px; }
+    .window-txt { font-size: 8px; }
 }
