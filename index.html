@@ -75,6 +75,7 @@
             <p class="instruccion">(Toca una foto para agrandar)</p>
         </section>
 
+        <!-- ZONA INTERACTIVA: GACHA | INVENTARIO | BOTÓN SORPRESA -->
         <div class="interactive-zone">
             
             <section class="gacha-section">
@@ -103,7 +104,15 @@
                 </div>
             </section>
 
-        </div> </div> 
+            <!-- NUEVA SECCIÓN: BOTÓN DE CORAZÓN -->
+            <section class="surprise-section" style="display: flex; align-items: center; justify-content: center; margin-top: 45px;">
+                <button id="btn-ataque-corazon" class="cute-btn" style="padding: 20px 30px; font-size: 1.4rem; background-color: #9d316e; border: 3px solid #ff8fb8; border-radius: 15px; box-shadow: 0 0 20px rgba(255, 143, 184, 0.6); animation: pulse 2s infinite;" onclick="lanzarAtaqueCorazon()">
+                    Sorpresa<br>Masiva 🖤
+                </button>
+            </section>
+
+        </div> 
+    </div> 
     
     <div id="imageModal" class="modal">
         <span class="close">&times;</span>
@@ -112,6 +121,9 @@
             <div id="modal-caption" class="caption"></div>
         </div>
     </div>
+
+    <!-- Lienzo invisible que contendrá las 220 ventanas flotantes del corazón -->
+    <div id="heart-canvas" onclick="cerrarLienzoCorazon(event)"></div>
 
     <audio id="ee-audio" src=""></audio>
 
@@ -126,6 +138,7 @@
     <script src="secretos.js"></script>
     <script src="datos.js"></script> 
     <script src="inventario.js"></script> 
-    <script src="gacha.js"></script> <script src="script.js"></script>
+    <script src="gacha.js"></script> 
+    <script src="script.js"></script>
 </body>
 </html>
