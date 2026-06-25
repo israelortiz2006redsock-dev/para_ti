@@ -165,8 +165,6 @@ function checkSecret() {
         display.style.color = "red";
         display.textContent = "ERROR";
         
-        // Si quieres, aquí también podrías agregar un sonido de error en el futuro
-        
         setTimeout(() => {
             clearSecret();
             display.style.color = "#55ff55";
@@ -187,21 +185,92 @@ function enviarRespuesta() {
         }
     }
 
-    // Si le da a enviar sin elegir nada
     if (seleccion === "") {
         alert("Por favor selecciona una opcion primero.");
         return;
     }
 
-    // AQUI PON TU NUMERO REAL SIN ESPACIOS NI GUIONES
-    // El 52 es el codigo de pais. Solo cambia los ultimos 10 digitos.
     const miNumero = "522224562927"; 
-    
     const mensaje = "Hola! Hoy en Discord me gustaria " + seleccion + ".";
-    
-    // Creamos el enlace que abre WhatsApp
     const url = "https://wa.me/" + miNumero + "?text=" + encodeURIComponent(mensaje);
-    
-    // Abre WhatsApp en una pestaña nueva
     window.open(url, "_blank");
+}
+
+// ========================================================
+// NUEVA LÓGICA: ATAQUE MASIVO DE CORAZÓN (VENTANAS RETRO)
+// ========================================================
+
+function lanzarAtaqueCorazon() {
+    const canvas = document.getElementById('heart-canvas');
+    canvas.innerHTML = ''; // Limpiar cualquier ejecución anterior
+    canvas.style.display = 'block';
+
+    // Crear el botón flotante para cerrar el lienzo
+    const botonCierre = document.createElement('button');
+    botonCierre.className = 'close-canvas-btn';
+    botonCierre.innerText = 'Cerrar Corazón ❌';
+    botonCierre.onclick = () => canvas.style.display = 'none';
+    canvas.appendChild(botonCierre);
+
+    const totalVentanas = 220;
+    const centroX = window.innerWidth / 2;
+    const centroY = window.innerHeight / 2;
+    
+    // Calcula qué tan grande puede ser el corazón dependiendo de la pantalla
+    const escala = Math.min(window.innerWidth, window.innerHeight) / 42; 
+
+    // Calcula el tamaño real de la ventana según el dispositivo para centrarla exacto
+    const offsetAncho = window.innerWidth <= 1000 ? 50 : 80;
+    const offsetAlto = window.innerWidth <= 1000 ? 45 : 65;
+
+    for (let i = 0; i < totalVentanas; i++) {
+        // Generar coordenadas en forma de corazón
+        const t = (i / totalVentanas) * 2 * Math.PI;
+        const x = 16 * Math.pow(Math.sin(t), 3);
+        const y = 13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t);
+
+        const posX = centroX + (x * escala) - offsetAncho;
+        const posY = centroY - (y * escala) - offsetAlto; 
+
+        // Elegir una foto al azar
+        const numFoto = Math.floor(Math.random() * 394) + 1;
+
+        // Recuperar la frase exacta del archivo comentarios.js
+        let fraseAsociada = "¡Te amo! 🖤"; 
+        if (typeof comentariosFotos !== 'undefined' && comentariosFotos[numFoto]) {
+            fraseAsociada = comentariosFotos[numFoto];
+        }
+
+        // Crear la ventana falsa
+        const ventana = document.createElement('div');
+        ventana.className = 'fake-window';
+        ventana.style.left = `${posX}px`;
+        ventana.style.top = `${posY}px`;
+        ventana.style.zIndex = i + 1000;
+
+        ventana.innerHTML = `
+            <div class="window-bar">
+                <span>🖤 Nuestro Momento</span>
+                <span style="cursor:pointer; font-weight:bold;" onclick="this.closest('.fake-window').remove()">X</span>
+            </div>
+            <div class="window-content">
+                <img src="fotos/foto${numFoto}.jpeg" onerror="this.onerror=null; this.src='fotos/foto1.jpeg';" alt="Recuerdo">
+                <div class="window-txt" title="${fraseAsociada}">${fraseAsociada}</div>
+            </div>
+        `;
+
+        canvas.appendChild(ventana);
+
+        // Hacer que aparezcan en cascada (cada 25 milisegundos)
+        setTimeout(() => {
+            ventana.classList.add('pop');
+        }, i * 25); 
+    }
+}
+
+// Permite cerrar si hace clic fuera de las ventanas
+function cerrarLienzoCorazon(event) {
+    if (event.target.id === 'heart-canvas') {
+        document.getElementById('heart-canvas').style.display = 'none';
+    }
 }
