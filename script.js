@@ -274,3 +274,32 @@ function cerrarLienzoCorazon(event) {
         document.getElementById('heart-canvas').style.display = 'none';
     }
 }
+
+// ========================================================
+// NUEVA LÓGICA: LETRAS DE FELIZ CUMPLEAÑOS
+// ========================================================
+function mostrarFotoCumple() {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('img01');
+    const captionText = document.getElementById('modal-caption');
+    
+    // Elige un número al azar de tus 394 fotos
+    const numFoto = Math.floor(Math.random() * 394) + 1;
+    
+    // Busca la frase en tu archivo de comentarios
+    let fraseAsociada = "¡Feliz Cumpleaños mi amor! 🎉"; 
+    if (typeof comentariosFotos !== 'undefined' && comentariosFotos[numFoto]) {
+        fraseAsociada = comentariosFotos[numFoto];
+    }
+    
+    // Asigna la foto y la frase al modal
+    modalImg.src = `fotos/foto${numFoto}.jpeg`;
+    
+    // Por si acaso una foto falla, que muestre la 1
+    modalImg.onerror = function() { this.src = 'fotos/foto1.jpeg'; };
+    
+    captionText.innerHTML = `🎂 ${fraseAsociada} 🎂`;
+    
+    // Abre el visor de fotos
+    modal.style.display = "block";
+}
