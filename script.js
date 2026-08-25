@@ -280,8 +280,6 @@ const frasesAniversario = [
     "Perdóname por lo de hoy.",
     "Eres lo mejor que me ha pasado.",
     "Feliz 2do Aniversario mi amor. Te amo."
-    "te amo con todo mi ser.",
-    "Eres todo para mi.",
 ];
 
 let clicApagon = 0;
