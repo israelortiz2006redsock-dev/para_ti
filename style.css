@@ -273,7 +273,7 @@ section { margin-top: 40px; padding-top: 20px; border-top: 2px dashed rgba(255, 
 }
 
 /* =========================================
-   NUEVOS ESTILOS: ATAQUE DE CORAZÓN
+   ESTILOS DE ATAQUE DE CORAZÓN (VENTANAS)
    ========================================= */
 #heart-canvas {
     position: fixed;
@@ -334,6 +334,50 @@ section { margin-top: 40px; padding-top: 20px; border-top: 2px dashed rgba(255, 
 }
 
 /* =========================================
+   ESTILOS DEL APAGÓN DE ANIVERSARIO
+   ========================================= */
+#apagon-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: #000000;
+    z-index: 100000; /* Se pone por encima de absolutamente TODO */
+    display: none; opacity: 0;
+    transition: opacity 2s ease-in-out;
+    cursor: pointer; overflow: hidden;
+}
+
+#apagon-overlay.activo { opacity: 1; }
+
+#apagon-collage {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; /* Para que el clic lo registre el fondo negro */
+}
+
+.apagon-foto {
+    position: absolute; width: 180px; height: 180px; object-fit: cover;
+    border: 4px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    opacity: 0; transform: scale(0.5);
+    transition: all 1s ease-out;
+}
+
+.apagon-foto.show {
+    opacity: 0.5; /* Se ven un poco oscuras para no tapar tus textos */
+    transform: scale(1) rotate(var(--rotacion));
+}
+
+.apagon-foto.collage-final {
+    opacity: 0.15; /* Se oscurecen mucho al final para el gran mensaje */
+}
+
+#apagon-texto {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    color: #ffffff; font-size: 2rem; text-align: center;
+    font-family: 'Pixelify Sans', monospace;
+    text-shadow: 2px 2px 10px #000, 0 0 20px rgba(255, 255, 255, 0.5);
+    opacity: 0; transition: opacity 1.5s;
+    width: 85%; max-width: 800px; pointer-events: none;
+}
+
+/* =========================================
    ADAPTACIÓN PARA CELULARES (¡AQUÍ ESTÁ LA MAGIA MÓVIL!)
    ========================================= */
 @media (max-width: 1000px) {
@@ -369,4 +413,8 @@ section { margin-top: 40px; padding-top: 20px; border-top: 2px dashed rgba(255, 
         height: 40px;
         border-width: 1px;
     }
+
+    /* Ajuste para el apagón emotivo en celulares */
+    #apagon-texto { font-size: 1.4rem; }
+    .apagon-foto { width: 120px; height: 120px; }
 }
