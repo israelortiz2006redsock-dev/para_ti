@@ -67,7 +67,7 @@
             <p>Un pequeño pedazo de nosotros...</p>
         </header>
 
-        <!-- NUEVA SECCIÓN: FELIZ CUMPLEAÑOS -->
+        <!-- SECCIÓN: FELIZ CUMPLEAÑOS -->
         <section class="birthday-section">
             <div id="birthday-letters">
                 <div class="word-group">
@@ -130,10 +130,10 @@
                 </div>
             </section>
 
-            <!-- NUEVA SECCIÓN: BOTÓN DE CORAZÓN -->
+            <!-- NUEVA SECCIÓN: BOTÓN 2 AÑOS (REEMPLAZA AL CORAZÓN MASIVO) -->
             <section class="surprise-section" style="display: flex; align-items: center; justify-content: center; margin-top: 45px;">
-                <button id="btn-ataque-corazon" class="cute-btn" style="padding: 20px 30px; font-size: 1.4rem; background-color: #9d316e; border: 3px solid #ff8fb8; border-radius: 15px; box-shadow: 0 0 20px rgba(255, 143, 184, 0.6); animation: pulse 2s infinite;" onclick="lanzarAtaqueCorazon()">
-                    Feliz<br>aniversario
+                <button id="btn-2-anos" class="cute-btn" style="padding: 20px 30px; font-size: 1.4rem; background-color: #000; border: 3px solid #55ffff; border-radius: 15px; box-shadow: 0 0 20px rgba(85, 255, 255, 0.6); animation: pulse 2s infinite;" onclick="iniciarApagon()">
+                    2 años juntos 
                 </button>
             </section>
 
@@ -148,7 +148,7 @@
         </div>
     </div>
 
-    <!-- Lienzo invisible que contendrá las 220 ventanas flotantes del corazón -->
+    <!-- Lienzo invisible que contendrá las 220 ventanas flotantes del corazón (por si decides reactivarlo luego) -->
     <div id="heart-canvas" onclick="cerrarLienzoCorazon(event)"></div>
 
     <audio id="ee-audio" src=""></audio>
@@ -157,6 +157,17 @@
 
     <div id="peeking-video-container">
         <video id="peeking-video" src="" controls></video>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- NUEVO: LIENZO NEGRO PARA EL ANIVERSARIO        -->
+    <!-- ============================================== -->
+    <div id="apagon-overlay" onclick="avanzarApagon()">
+        <!-- PON EL NOMBRE DE TU CANCIÓN AQUÍ -->
+        <audio id="audio-aniversario" src="cancion_triste.mp3" loop></audio>
+        
+        <div id="apagon-collage"></div>
+        <div id="apagon-texto"></div>
     </div>
 
     <script src="comentarios.js"></script>
