@@ -333,9 +333,7 @@ section { margin-top: 40px; padding-top: 20px; border-top: 2px dashed rgba(255, 
     cursor: pointer; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
-/* =========================================
-   ESTILOS DEL APAGÓN DE ANIVERSARIO
-   ========================================= */
+
 #apagon-overlay {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
     background: #000000;
@@ -377,9 +375,7 @@ section { margin-top: 40px; padding-top: 20px; border-top: 2px dashed rgba(255, 
     width: 85%; max-width: 800px; pointer-events: none;
 }
 
-/* =========================================
-   ADAPTACIÓN PARA CELULARES (¡AQUÍ ESTÁ LA MAGIA MÓVIL!)
-   ========================================= */
+
 @media (max-width: 1000px) {
     .floating-widget-left, .floating-widget-right {
         position: static; margin: 0 auto 30px auto; width: 80%; max-width: 300px;
