@@ -269,9 +269,6 @@ function mostrarFotoCumple() {
     modal.style.display = "block";
 }
 
-// ========================================================
-// NUEVA LÓGICA: APAGÓN EMOTIVO 2 AÑOS (CON LLUVIA DE FOTOS)
-// ========================================================
 
 // PON TUS FRASES AQUÍ ADENTRO 
 const frasesAniversario = [
