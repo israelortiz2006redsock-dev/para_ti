@@ -249,9 +249,6 @@ function cerrarLienzoCorazon(event) {
     }
 }
 
-// ========================================================
-// LÓGICA: LETRAS DE FELIZ CUMPLEAÑOS
-// ========================================================
 function mostrarFotoCumple() {
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('img01');
